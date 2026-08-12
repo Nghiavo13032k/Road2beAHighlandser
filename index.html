@@ -103,7 +103,7 @@
       box-shadow: 0 8px 24px rgba(45, 0, 15, 0.22);
     }
     .header-note {
-      font-size: 0.78rem;
+      font-size: 0.70rem;
       font-weight: 700;
       letter-spacing: 0.13em;
       text-transform: uppercase;
@@ -352,11 +352,11 @@
     .info-card ul { margin: 0.8rem 0 0; padding-left: 1.05rem; }
     .info-card li + li { margin-top: 0.45rem; }
     .card-tag { display: inline-flex; margin-bottom: 1.2rem; padding: 0.35rem 0.65rem; border-radius: 999px; color: var(--berry); background: rgba(143,23,56,0.08); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-    .employee-card-1 { grid-column: span 7; display: grid; grid-template-columns: 1fr 0.95fr; gap: 1.5rem; align-items: center; min-height: 370px; background: var(--berry-dark); color: white; }
-    .employee-card-1 h3 { color: white; }
-    .employee-card-1 p { color: rgba(255,255,255,0.7); }
-    .employee-card-1 img { width: 100%; border-radius: 0.8rem; box-shadow: 0 18px 35px rgba(29, 0, 11, 0.3); transform: rotate(3deg); transition: transform 220ms ease; }
-    .employee-card-1:hover img { transform: rotate(0deg) scale(1.02); }
+    .employee-card-2 { grid-column: span 7; display: grid; grid-template-columns: 1fr 0.95fr; gap: 1.5rem; align-items: center; min-height: 370px; background: var(--berry-dark); color: white; }
+    .employee-card-2 h3 { color: white; }
+    .employee-card-2 p { color: rgba(255,255,255,0.7); }
+    .employee-card-2 img { width: 100%; border-radius: 0.8rem; box-shadow: 0 18px 35px rgba(29, 0, 11, 0.3); transform: rotate(3deg); transition: transform 220ms ease; }
+    .employee-card-2:hover img { transform: rotate(0deg) scale(1.02); }
     .discount-card { grid-column: span 5; background: var(--peach); }
     .equipment-card { grid-column: span 4; min-height: 230px; }
     .equipment-card:nth-of-type(4) { background: #eee2c9; }
@@ -450,7 +450,7 @@
       .section-intro { grid-column: 2; }
       .document-layout, .work-layout, .platform-grid { grid-template-columns: 1fr; }
       .deadline-card { position: static; }
-      .employee-card-1, .discount-card { grid-column: span 12; }
+      .employee-card-2, .discount-card { grid-column: span 12; }
       .equipment-card { grid-column: span 6; }
       .tour-intro { margin-left: 100px; }
       .gallery { grid-auto-rows: 145px; }
@@ -476,7 +476,7 @@
       .first-day-copy { grid-column: auto; }
       .table-shell { overflow-x: auto; }
       table { min-width: 630px; }
-      .employee-card-1 { grid-template-columns: 1fr; }
+      .employee-card-2 { grid-template-columns: 1fr; }
       .equipment-card { grid-column: span 12; }
       .time-grid { grid-template-columns: 1fr; }
       .dress-code { grid-template-columns: 1fr; }
@@ -584,11 +584,10 @@
               <tr><td class="doc-index">01</td><td>3×4 photo</td><td class="qty">2</td></tr>
               <tr><td class="doc-index">02</td><td>Certified résumé</td><td class="qty">1</td></tr>
               <tr><td class="doc-index">03</td><td>Certified copy of ID card</td><td class="qty">1</td></tr>
-              <tr><td class="doc-index">04</td><td>Medical certificate valid within 60 days</td><td class="qty">1</td></tr>
+              <tr><td class="doc-index">04</td><td>Medical Certificate (Circular No. 25/2026/TT-BYT), valid within 60 days.</td><td class="qty">1</td></tr>
               <tr><td class="doc-index">05</td><td>Notarized copies of degrees, diplomas, and certificates</td><td class="qty">1</td></tr>
               <tr><td class="doc-index">06</td><td>Bank account details (except Agribank)</td><td class="qty">1</td></tr>
-              <tr><td class="doc-index">07</td><td>Residence certificate or personal identification number</td><td class="qty">1</td></tr>
-              <tr><td class="doc-index">08</td><td>Citizen information certificate from the National Population Database</td><td class="qty">1</td></tr>
+              <tr><td class="doc-index">07</td><td>A copy of the Electronic Citizen Identity Card on the VNeID Application (level 2) or Residence Certificate </td><td class="qty">1</td></tr>
             </tbody>
           </table>
         </div>
@@ -597,7 +596,7 @@
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <small>Submission timing</small>
           <h3>First day + 7 days</h3>
-          <p>Submit your available personal documents on your first day and provide any remaining items within seven days. Salary is withheld until the required documents are complete.</p>
+          <p>Submit all the above documents on your first day. Salary is withheld until the required documents are complete.</p>
         </aside>
       </div>
     </section>
@@ -610,14 +609,14 @@
       </div>
 
       <div class="facilitator-grid">
-        <article class="info-card employee-card-1 reveal">
+        <article class="info-card employee-card-2 reveal">
           <div>
             <span class="card-tag">Provided by HR</span>
             <h3>Your employee ID card</h3>
             <p>Use your badge for photocopying, scanning, dining at Highlands Coffee and Pho 24, plus additional benefits across VTI group services.</p>
             <p>For a visitor card, contact Ms. Uyen at reception. For a replacement, pay the 150,000 VND fee at Ms. Thuy’s counter on the first floor and take the receipt to reception.</p>
           </div>
-          <img src="employee-card-1.svg" alt="Highlands Coffee employee identification card artwork">
+          <img src="employee-card-2.svg" alt="Highlands Coffee employee identification card artwork">
         </article>
 
         <article class="info-card discount-card reveal">
