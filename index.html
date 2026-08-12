@@ -456,12 +456,33 @@
       .gallery { grid-auto-rows: 145px; }
     }
 
+    /* Prevent tiny horizontal overflow on some mobile browsers */
+    html, body { overflow-x: hidden; }
+
+    /* Make sure hero background focuses top/center and doesn't repeat */
+    .hero {
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
     @media (max-width: 620px) {
       .site-header, .hero-inner, .nav-inner, .section, .first-day, .closing { width: min(100% - 2rem, 1180px); }
       .header-note { display: none; }
       .hero { border-radius: 0 0 2.5rem 2.5rem; }
-      .hero-inner { padding-bottom: 3.5rem; }
-      h1 { font-size: clamp(3.7rem, 18vw, 5.8rem); }
+      .hero {
+        background-size: 100% auto;
+        background-position: center 8%;
+      }
+      h1 {
+        font-size: clamp(1.8rem, 8.5vw, 3.4rem);
+        line-height: 1;
+      }
+      .hero-inner {
+        padding-top: 5.5rem;
+        padding-bottom: 2.5rem;
+        gap: 1.5rem;
+      }
       h1 span { margin-left: 0.2em; }
       .route-card { padding: 1.4rem; }
       .journey-nav { top: 0; }
