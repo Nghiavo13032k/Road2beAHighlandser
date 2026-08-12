@@ -405,6 +405,38 @@
     .feature-check { display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.75rem; align-items: center; padding: 0.8rem; border: 1px solid rgba(255,255,255,0.11); border-radius: 0.9rem; color: rgba(255,255,255,0.82); font-size: 0.8rem; }
     .check { display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: rgba(245,211,151,0.14); color: #f5d397; font-weight: 700; }
 
+    .ask-section { width: 100%; max-width: none; padding: 7rem max(1.5rem, calc((100% - 1180px) / 2)); background: var(--berry-dark); color: white; border-top: 1px solid var(--line); }
+    .ask-section .section-heading { width: min(1180px, 100%); }
+    .ask-section .section-number { color: rgba(245,211,151,0.36); }
+    .ask-section .section-title-wrap p { color: #f5d397; }
+    .ask-section h2 { color: white; }
+    .ask-section .section-intro { color: rgba(255,255,255,0.62); }
+    .ask-card { width: min(1180px, 100%); padding: 2.5rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 1.75rem; }
+    .ask-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: #f5d397; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .field input, .field textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      color: white;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 0.9rem;
+      font: inherit;
+      font-size: 0.92rem;
+      resize: vertical;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.4); }
+    .field input:focus, .field textarea:focus { border-color: var(--mustard); background: rgba(255,255,255,0.1); outline: none; }
+    .ask-form .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .ask-actions { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; margin-top: 1.6rem; }
+    .ask-status { font-size: 0.85rem; color: rgba(255,255,255,0.72); }
+    .ask-status.success { color: #b6e0a8; }
+    .ask-status.error { color: #f2a4a4; }
+    .button-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
     .tour-intro { max-width: 770px; margin: -1.2rem 0 3rem 160px; color: var(--muted); }
     .gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 175px; gap: 1rem; }
     .gallery figure { position: relative; overflow: hidden; margin: 0; border-radius: 1.25rem; background: #dacabb; }
@@ -456,33 +488,12 @@
       .gallery { grid-auto-rows: 145px; }
     }
 
-    /* Prevent tiny horizontal overflow on some mobile browsers */
-    html, body { overflow-x: hidden; }
-
-    /* Make sure hero background focuses top/center and doesn't repeat */
-    .hero {
-      background-position: center top;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
     @media (max-width: 620px) {
       .site-header, .hero-inner, .nav-inner, .section, .first-day, .closing { width: min(100% - 2rem, 1180px); }
       .header-note { display: none; }
       .hero { border-radius: 0 0 2.5rem 2.5rem; }
-      .hero {
-        background-size: 100% auto;
-        background-position: center 8%;
-      }
-      h1 {
-        font-size: clamp(1.8rem, 8.5vw, 3.4rem);
-        line-height: 1;
-      }
-      .hero-inner {
-        padding-top: 5.5rem;
-        padding-bottom: 2.5rem;
-        gap: 1.5rem;
-      }
+      .hero-inner { padding-bottom: 3.5rem; }
+      h1 { font-size: clamp(3.7rem, 18vw, 5.8rem); }
       h1 span { margin-left: 0.2em; }
       .route-card { padding: 1.4rem; }
       .journey-nav { top: 0; }
@@ -563,6 +574,7 @@
         <a href="#workplace">Workplace</a>
         <a href="#platforms">Platforms</a>
         <a href="#tour">Tour</a>
+        <a href="#ask">Ask a question</a>
       </div>
     </div>
     <div class="progress-track" aria-hidden="true"><div class="progress-bar"></div></div>
@@ -769,6 +781,43 @@
       <h2>Your road starts here.</h2>
       <p>Welcome to Highlands Coffee. Bring your curiosity, ask questions, and enjoy becoming part of the Highlandser's community.</p>
     </section>
+
+    <section class="section ask-section" id="ask">
+      <div class="section-heading reveal">
+        <span class="section-number">07</span>
+        <div class="section-title-wrap"><p>Still curious?</p><h2>Ask us anything</h2></div>
+        <p class="section-intro">Can't find what you're looking for? Send your question straight to our onboarding admin and we'll get back to you.</p>
+      </div>
+
+      <form class="ask-card ask-form reveal" id="askForm" action="https://formsubmit.co/ajax/nghia.vo@vtijs.com" method="POST">
+        <!-- Anti-spam honeypot field: must stay empty -->
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="New question from a new hire">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="ask-grid">
+          <div class="field">
+            <label for="askName">Your name</label>
+            <input type="text" id="askName" name="Name" placeholder="e.g. Nguyen Van A" required>
+          </div>
+          <div class="field">
+            <label for="askEmail">Your email</label>
+            <input type="email" id="askEmail" name="Email" placeholder="you@highlandscoffee.com.vn" required>
+          </div>
+          <div class="field full">
+            <label for="askQuestion">Your question</label>
+            <textarea id="askQuestion" name="Question" rows="4" placeholder="Type your question here..." required></textarea>
+          </div>
+        </div>
+
+        <div class="ask-actions">
+          <button type="submit" class="button button-primary" id="askSubmit">Send question</button>
+          <span class="ask-status" id="askStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
   </main>
 
   <footer>Road to be A Highlandser · New employee onboarding guide</footer>
@@ -809,6 +858,42 @@
 
     window.addEventListener('scroll', updateJourney, { passive: true });
     updateJourney();
+
+    const askForm = document.getElementById('askForm');
+    if (askForm) {
+      const askSubmit = document.getElementById('askSubmit');
+      const askStatus = document.getElementById('askStatus');
+
+      askForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        askStatus.textContent = '';
+        askStatus.className = 'ask-status';
+        askSubmit.disabled = true;
+        askSubmit.textContent = 'Sending…';
+
+        try {
+          const response = await fetch(askForm.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(askForm)
+          });
+
+          if (response.ok) {
+            askForm.reset();
+            askStatus.textContent = 'Thanks! Your question has been sent to our admin.';
+            askStatus.classList.add('success');
+          } else {
+            throw new Error('Request failed');
+          }
+        } catch (err) {
+          askStatus.textContent = 'Something went wrong. Please try again or email nghia.vo@vtijs.com directly.';
+          askStatus.classList.add('error');
+        } finally {
+          askSubmit.disabled = false;
+          askSubmit.textContent = 'Send question';
+        }
+      });
+    }
   </script>
 </body>
 </html>
