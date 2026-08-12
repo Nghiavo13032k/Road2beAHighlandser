@@ -7,7 +7,7 @@
   <title>Road to be A Highlandser — New Employee Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
   <style>
     :root {
       --berry: #8f1738;
@@ -21,8 +21,8 @@
       --muted: #6f5c5f;
       --line: rgba(91, 16, 39, 0.16);
       --shadow: 0 24px 60px rgba(69, 25, 34, 0.12);
-      --serif: "DM Serif Display", Georgia, serif;
-      --sans: "DM Sans", sans-serif;
+      --serif: "Red Rose", Georgia, serif;
+      --sans: "Red Rose", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -41,20 +41,7 @@
       inset: 0;
       z-index: -2;
       pointer-events: none;
-      background:
-        radial-gradient(circle at 9% 16%, rgba(215, 165, 71, 0.15), transparent 24rem),
-        radial-gradient(circle at 93% 72%, rgba(143, 23, 56, 0.09), transparent 30rem),
-        var(--cream);
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 20;
-      opacity: 0.22;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E");
-      mix-blend-mode: multiply;
+      background: var(--cream);
     }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; }
@@ -287,8 +274,6 @@
       transition: background 160ms ease, color 160ms ease;
     }
     .nav-links a:hover, .nav-links a.active { background: var(--berry); color: white; }
-    .progress-track { position: absolute; inset: auto 0 0; height: 2px; background: transparent; }
-    .progress-bar { width: 0; height: 100%; background: var(--mustard); }
 
     main { overflow: hidden; }
     .section {
@@ -460,9 +445,6 @@
     .closing p { position: relative; max-width: 540px; margin: 0 auto; color: rgba(255,255,255,0.7); }
     footer { padding: 1rem 1.5rem 3rem; color: var(--muted); text-align: center; font-size: 0.76rem; }
 
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 650ms ease, transform 650ms ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
     @media (max-width: 900px) {
       .hero, .hero-inner { min-height: auto; }
       .hero-inner { grid-template-columns: 1fr; gap: 3rem; padding-top: 9rem; }
@@ -512,7 +494,6 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -521,7 +502,7 @@
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Highlands Coffee onboarding home">
-      <img src="brand-mark-1.png" alt="">
+      <img src="Background.jpg" alt="">
       <span>Highlands Coffee</span>
     </a>
     <span class="header-note">New employee onboarding guide</span>
@@ -529,7 +510,7 @@
 
   <section class="hero" id="top">
     <div class="hero-inner">
-      <div class="hero-copy reveal">
+      <div class="hero-copy">
         <p class="eyebrow">Your first-week field guide</p>
         <h1>Road to be <span>A Highlandser</span></h1>
         <p class="hero-lead">One clear route through the documents, tools, workplace essentials, and people that help you feel at home from day one.</p>
@@ -542,7 +523,7 @@
         </div>
       </div>
 
-      <aside class="route-card reveal" aria-label="Onboarding route">
+      <aside class="route-card" aria-label="Onboarding route">
         <p class="route-kicker">Your route · 6 stops</p>
         <ol class="route-list">
           <li><span class="route-number">01</span><a href="#documents">Documentation</a></li>
@@ -567,11 +548,10 @@
         <a href="#tour">Tour</a>
       </div>
     </div>
-    <div class="progress-track" aria-hidden="true"><div class="progress-bar"></div></div>
   </nav>
 
   <main id="main-content">
-    <section class="first-day reveal" id="first-day" aria-labelledby="first-day-title">
+    <section class="first-day" id="first-day" aria-labelledby="first-day-title">
       <div class="first-day-grid">
         <div class="first-day-copy">
           <h2 id="first-day-title">Day one, at a glance.</h2>
@@ -593,14 +573,14 @@
     </section>
 
     <section class="section" id="documents">
-      <div class="section-heading reveal">
+      <div class="section-heading">
         <span class="section-number">01</span>
         <div class="section-title-wrap"><p>Before you begin</p><h2>Documentation</h2></div>
         <p class="section-intro">Prepare each item in advance to make your first day smooth and keep your employee records complete.</p>
       </div>
 
       <div class="document-layout">
-        <div class="table-shell reveal">
+        <div class="table-shell">
           <table>
             <thead><tr><th>No.</th><th>Required item</th><th class="qty">Qty.</th></tr></thead>
             <tbody>
@@ -616,7 +596,7 @@
           </table>
         </div>
 
-        <aside class="deadline-card reveal">
+        <aside class="deadline-card">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <small>Submission timing</small>
           <h3>First day + 7 days</h3>
@@ -626,24 +606,24 @@
     </section>
 
     <section class="section" id="facilitators">
-      <div class="section-heading reveal">
+      <div class="section-heading">
         <span class="section-number">02</span>
         <div class="section-title-wrap"><p>Tools for the journey</p><h2>Facilitators</h2></div>
         <p class="section-intro">The access, equipment, supplies, and employee benefits set up during your first week.</p>
       </div>
 
       <div class="facilitator-grid">
-        <article class="info-card employee-card reveal">
+        <article class="info-card employee-card">
           <div>
             <span class="card-tag">Provided by HR</span>
             <h3>Your employee ID card</h3>
             <p>Use your badge for photocopying, scanning, dining at Highlands Coffee and Pho 24, plus additional benefits across VTI group services.</p>
             <p>For a visitor card, contact Ms. Uyen at reception. For a replacement, pay the 150,000 VND fee at Ms. Thuy’s counter on the first floor and take the receipt to reception.</p>
           </div>
-          <img src="employee-card.png" alt="Highlands Coffee employee identification card artwork">
+          <img src="Background.jpg" alt="Highlands Coffee employee identification card artwork">
         </article>
 
-        <article class="info-card discount-card reveal">
+        <article class="info-card discount-card">
           <span class="card-tag">Employee benefit</span>
           <h3>Store discounts</h3>
           <p><strong>30% off at All Highlands Coffee stores except</strong></p>
@@ -654,165 +634,182 @@
           <p style="margin:1rem 0 0"><strong>30% off at Pho 24</strong><br>127 Nguyen Co Thach, Ho Chi Minh City</p>
         </article>
 
-        <article class="info-card equipment-card reveal">
+        <article class="info-card equipment-card">
           <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17.5V6.7A1.7 1.7 0 0 1 5.7 5h12.6A1.7 1.7 0 0 1 20 6.7v10.8M2 18h20v1H2v-1Z" stroke="currentColor" stroke-width="1.6"/><path d="M9 9h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           <h3>Computer &amp; laptop</h3>
           <p>IT provides your work equipment and usage instructions on your first day.</p>
         </article>
-        <article class="info-card equipment-card reveal">
+
+        <article class="info-card equipment-card">
           <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 19 3.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L5 19Z" stroke="currentColor" stroke-width="1.6"/><path d="m14 7 3 3M5.5 15.5l3 3" stroke="currentColor" stroke-width="1.6"/></svg>
-          <h3>Stationery</h3>
-          <p>Basic office supplies are ready on day one. Your department handles monthly requests for additional items.</p>
+          <h3>Stationery &amp; Supplies</h3>
+          <p>Collect office supplies directly from Admin or request items required for your role from your direct manager.</p>
         </article>
-        <article class="info-card equipment-card reveal">
-          <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2" stroke="currentColor" stroke-width="1.6"/><path d="M7 14h10v7H7v-7Z" stroke="currentColor" stroke-width="1.6"/></svg>
-          <h3>Printer access</h3>
-          <p>Printers are on floors 2 and 4. Sign in with your badge and use the last five digits of your card number as the password.</p>
+
+        <article class="info-card equipment-card">
+          <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 8h10M7 12h10M7 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>Business Cards</h3>
+          <p>Submit your request through your department head to receive official company business cards.</p>
         </article>
       </div>
     </section>
 
     <section class="section" id="workplace">
-      <div class="section-heading reveal">
+      <div class="section-heading">
         <span class="section-number">03</span>
-        <div class="section-title-wrap"><p>Your everyday rhythm</p><h2>Workplace guide</h2></div>
-        <p class="section-intro">Know when to arrive, what to wear, and where to find your team across our main office locations.</p>
+        <div class="section-title-wrap"><p>Time &amp; Places</p><h2>Working Time &amp; Location</h2></div>
+        <p class="section-intro">Essential details regarding working hours, office locations, parking, and dress codes.</p>
       </div>
 
       <div class="work-layout">
-        <article class="schedule-card reveal">
-          <h3>Working time &amp; dress code</h3>
-          <div class="week-row" aria-label="Working days Monday through Friday">
-            <span class="weekday on">MON</span><span class="weekday on">TUE</span><span class="weekday on">WED</span><span class="weekday on">THU</span><span class="weekday on">FRI</span><span class="weekday">SAT</span><span class="weekday">SUN</span>
+        <div class="schedule-card">
+          <h3>Working Hours</h3>
+          <div class="week-row">
+            <div class="weekday on">M</div>
+            <div class="weekday on">T</div>
+            <div class="weekday on">W</div>
+            <div class="weekday on">T</div>
+            <div class="weekday on">F</div>
+            <div class="weekday">S</div>
+            <div class="weekday">S</div>
           </div>
           <div class="time-grid">
-            <div class="time-slot"><small>Morning</small><strong>8:30 AM – 12:00 PM</strong></div>
-            <div class="time-slot"><small>Lunch break</small><strong>12:00 PM – 1:00 PM</strong></div>
-            <div class="time-slot"><small>Afternoon</small><strong>1:00 PM – 5:30 PM</strong></div>
+            <div class="time-slot">
+              <small>Morning</small>
+              <strong>08:30 – 12:00</strong>
+            </div>
+            <div class="time-slot">
+              <small>Lunch Break</small>
+              <strong>12:00 – 13:00</strong>
+            </div>
+            <div class="time-slot">
+              <small>Afternoon</small>
+              <strong>13:00 – 17:30</strong>
+            </div>
           </div>
           <div class="dress-code">
-            <div class="dress-item"><strong>Monday – Thursday</strong><span>Neat office attire</span></div>
-            <div class="dress-item"><strong>Friday</strong><span>Formal and comfortable attire</span></div>
+            <div class="dress-item">
+              <strong>Mon – Thu</strong>
+              <span>Smart Casual</span>
+            </div>
+            <div class="dress-item">
+              <strong>Friday</strong>
+              <span>Casual</span>
+            </div>
           </div>
-        </article>
+        </div>
 
         <div class="locations">
-          <article class="location-card reveal">
-            <h3>Highlands Coffee HQ</h3>
-            <address>127 Nguyen Co Thach, An Khanh Ward, Ho Chi Minh City</address>
-            <span class="parking-badge">Free parking · Basement, turn right</span>
-          </article>
-          <article class="location-card reveal">
-            <h3>HC North · Stellar Garden</h3>
-            <address>Floor 2, 35 Le Van Thiem, Thanh Xuan District, Ha Noi</address>
-          </article>
-          <article class="location-card reveal">
-            <h3>HC Central</h3>
-            <address>338 Nguyen Van Linh, Thanh Khe Ward, Da Nang City</address>
-          </article>
+          <div class="location-card">
+            <h3>Head Office</h3>
+            <address>127 Nguyen Co Thach, An Loi Dong Ward, Thu Duc City, HCMC</address>
+            <div class="parking-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Free parking available in basement
+            </div>
+          </div>
+          <div class="location-card">
+            <h3>Northern Office</h3>
+            <address>VTI Tower, 122 Hoang Quoc Viet, Cau Giay District, Hanoi</address>
+            <div class="parking-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Building parking area
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section platform-section" id="platforms">
-      <div class="section-heading reveal">
+    <section class="platform-section" id="platforms">
+      <div class="section-heading">
         <span class="section-number">04</span>
-        <div class="section-title-wrap"><p>Stay connected</p><h2>Employee platforms</h2></div>
-        <p class="section-intro">Two digital spaces keep communication, personal information, and HR requests in one place.</p>
+        <div class="section-title-wrap"><p>Digital Hub</p><h2>Employee Platforms</h2></div>
+        <p class="section-intro">Key digital tools to stay connected, manage HR tasks, and access company resources.</p>
       </div>
 
       <div class="platform-grid">
-        <article class="hub-card reveal">
+        <div class="hub-card">
           <div class="hub-copy">
-            <span class="card-tag">Communication &amp; collaboration</span>
-            <h3>Highlandsers Hub</h3>
-            <p>An internal space designed to strengthen everyday communication, improve collaboration, and keep teams connected.</p>
+            <h3>Workplace / Intranet</h3>
+            <p>Our internal communication platform for company announcements, updates, team news, and resource sharing.</p>
           </div>
-          <div class="hub-visual"><img src="highlanders-hub.png" alt="Highlandsers Hub platform interface preview"></div>
-        </article>
+          <div class="hub-visual">
+            <img src="Background.jpg" alt="Workplace portal interface preview">
+          </div>
+        </div>
 
-        <article class="cadena-card reveal">
+        <div class="cadena-card">
           <div class="cadena-head">
-            <div><span class="card-tag">Human resources</span><h3>Cadena</h3></div>
-            <img src="cadena-mark.png" alt="Cadena platform logo">
+            <h3>Cadena Portal</h3>
+            <img src="Background.jpg" alt="Cadena logo">
           </div>
-          <p>HR sends your account details. Once signed in, you can manage the essential parts of your employee profile.</p>
+          <p>The self-service HR portal for managing your attendance, leave applications, and payroll details.</p>
           <div class="feature-checks">
             <div class="feature-check"><span class="check">✓</span><span>Submit leave requests</span></div>
-            <div class="feature-check"><span class="check">✓</span><span>View, download, and verify payslips</span></div>
+            <div class="feature-check"><span class="check">✓</span><span>Check timekeeping records</span></div>
+            <div class="feature-check"><span class="check">✓</span><span>View monthly payslips</span></div>
             <div class="feature-check"><span class="check">✓</span><span>Update personal information</span></div>
-            <div class="feature-check"><span class="check">✓</span><span>Complete evaluations, goals, and performance reviews</span></div>
-            <div class="feature-check"><span class="check">✓</span><span>Support recruitment and new-hire onboarding workflows</span></div>
           </div>
-        </article>
+        </div>
       </div>
     </section>
 
     <section class="section" id="tour">
-      <div class="section-heading reveal">
+      <div class="section-heading">
         <span class="section-number">05</span>
-        <div class="section-title-wrap"><p>Find your way around</p><h2>Company tour</h2></div>
-        <p class="section-intro">A first look at the shared spaces, meeting areas, and work environments you’ll encounter.</p>
+        <div class="section-title-wrap"><p>Virtual Walkthrough</p><h2>Company Tour</h2></div>
+        <p class="section-intro">Explore our office layout and collaborative workspaces.</p>
       </div>
-      <p class="tour-intro reveal">The office is designed for different modes of work — from focused tasks and team sessions to informal conversations over coffee. These views come directly from the onboarding guide.</p>
+
+      <div class="tour-intro">
+        <p>Get familiar with our headquarters environment designed to foster creativity, collaboration, and community.</p>
+      </div>
 
       <div class="gallery">
-        <figure class="reveal"><img src="tour-cafe.jpeg" alt="Highlands Coffee workplace interior" loading="lazy"><figcaption>Office view 01</figcaption></figure>
-        <figure class="reveal"><img src="tour-reception.jpeg" alt="Highlands Coffee workplace reception area" loading="lazy"><figcaption>Office view 02</figcaption></figure>
-        <figure class="reveal"><img src="tour-workspace.jpeg" alt="Highlands Coffee shared workspace" loading="lazy"><figcaption>Office view 03</figcaption></figure>
-        <figure class="reveal"><img src="tour-meeting.jpeg" alt="Highlands Coffee meeting area" loading="lazy"><figcaption>Office view 04</figcaption></figure>
-        <figure class="reveal"><img src="tour-lounge.jpeg" alt="Highlands Coffee office lounge" loading="lazy"><figcaption>Office view 05</figcaption></figure>
-        <figure class="reveal"><img src="tour-corridor.jpeg" alt="Highlands Coffee office interior" loading="lazy"><figcaption>Office view 06</figcaption></figure>
-        <figure class="reveal"><img src="tour-collaboration.jpeg" alt="Highlands Coffee collaboration space" loading="lazy"><figcaption>Office view 07</figcaption></figure>
-        <figure class="reveal"><img src="tour-training.jpeg" alt="Highlands Coffee team space" loading="lazy"><figcaption>Office view 08</figcaption></figure>
+        <figure>
+          <img src="Background.jpg" alt="Reception area">
+          <figcaption>Reception</figcaption>
+        </figure>
+        <figure>
+          <img src="Background.jpg" alt="Open Workspace">
+          <figcaption>Open Workspace</figcaption>
+        </figure>
+        <figure>
+          <img src="Background.jpg" alt="Meeting Room">
+          <figcaption>Meeting Room</figcaption>
+        </figure>
+        <figure>
+          <img src="Background.jpg" alt="Coffee Lounge">
+          <figcaption>Coffee Lounge</figcaption>
+        </figure>
+        <figure>
+          <img src="Background.jpg" alt="Training Center">
+          <figcaption>Training Center</figcaption>
+        </figure>
+        <figure>
+          <img src="Background.jpg" alt="Breakroom">
+          <figcaption>Breakroom</figcaption>
+        </figure>
+        <figure>
+          <img src="Background.jpg" alt="Executive Area">
+          <figcaption>Executive Area</figcaption>
+        </figure>
+        <figure>
+          <img src="Background.jpg" alt="Outdoor Terrace">
+          <figcaption>Outdoor Terrace</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="closing reveal" id="welcome">
-      <img src="brand-mark-1.png" alt="">
-      <h2>Your road starts here.</h2>
-      <p>Welcome to Highlands Coffee. Bring your curiosity, ask questions, and enjoy becoming part of the Highlandser's community.</p>
+    <section class="closing" id="welcome">
+      <img src="Background.jpg" alt="Highlands Coffee logo icon">
+      <h2>Welcome to the Team!</h2>
+      <p>We are thrilled to have you join our journey. If you have any questions, reach out to your HR contact or team manager anytime.</p>
     </section>
   </main>
 
-  <footer>Road to be A Highlandser · New employee onboarding guide</footer>
-
-  <script>
-    const revealElements = document.querySelectorAll('.reveal');
-    const sectionLinks = document.querySelectorAll('.nav-links a');
-    const sections = [...sectionLinks].map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      revealElements.forEach(element => element.classList.add('visible'));
-    } else {
-      const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      revealElements.forEach(element => revealObserver.observe(element));
-    }
-
-    function updateJourney() {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
-      document.querySelector('.progress-bar').style.width = `${progress * 100}%`;
-
-      let current = sections[0];
-      sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 150) current = section;
-      });
-      sectionLinks.forEach(link => {
-        link.classList.toggle('active', current && link.getAttribute('href') === `#${current.id}`);
-      });
-    }
-
-    window.addEventListener('scroll', updateJourney, { passive: true });
-    updateJourney();
-  </script>
+  <footer>
+    <p>&copy; Highlands Coffee. All rights reserved. For internal onboarding use only.</p>
+  </footer>
 </body>
 </html>
