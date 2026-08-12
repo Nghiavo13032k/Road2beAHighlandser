@@ -352,11 +352,11 @@
     .info-card ul { margin: 0.8rem 0 0; padding-left: 1.05rem; }
     .info-card li + li { margin-top: 0.45rem; }
     .card-tag { display: inline-flex; margin-bottom: 1.2rem; padding: 0.35rem 0.65rem; border-radius: 999px; color: var(--berry); background: rgba(143,23,56,0.08); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-    .employee-card { grid-column: span 7; display: grid; grid-template-columns: 1fr 0.95fr; gap: 1.5rem; align-items: center; min-height: 370px; background: var(--berry-dark); color: white; }
-    .employee-card h3 { color: white; }
-    .employee-card p { color: rgba(255,255,255,0.7); }
-    .employee-card img { width: 100%; border-radius: 0.8rem; box-shadow: 0 18px 35px rgba(29, 0, 11, 0.3); transform: rotate(3deg); transition: transform 220ms ease; }
-    .employee-card:hover img { transform: rotate(0deg) scale(1.02); }
+    .employee-card-1 { grid-column: span 7; display: grid; grid-template-columns: 1fr 0.95fr; gap: 1.5rem; align-items: center; min-height: 370px; background: var(--berry-dark); color: white; }
+    .employee-card-1 h3 { color: white; }
+    .employee-card-1 p { color: rgba(255,255,255,0.7); }
+    .employee-card-1 img { width: 100%; border-radius: 0.8rem; box-shadow: 0 18px 35px rgba(29, 0, 11, 0.3); transform: rotate(3deg); transition: transform 220ms ease; }
+    .employee-card-1:hover img { transform: rotate(0deg) scale(1.02); }
     .discount-card { grid-column: span 5; background: var(--peach); }
     .equipment-card { grid-column: span 4; min-height: 230px; }
     .equipment-card:nth-of-type(4) { background: #eee2c9; }
@@ -450,7 +450,7 @@
       .section-intro { grid-column: 2; }
       .document-layout, .work-layout, .platform-grid { grid-template-columns: 1fr; }
       .deadline-card { position: static; }
-      .employee-card, .discount-card { grid-column: span 12; }
+      .employee-card-1, .discount-card { grid-column: span 12; }
       .equipment-card { grid-column: span 6; }
       .tour-intro { margin-left: 100px; }
       .gallery { grid-auto-rows: 145px; }
@@ -476,7 +476,7 @@
       .first-day-copy { grid-column: auto; }
       .table-shell { overflow-x: auto; }
       table { min-width: 630px; }
-      .employee-card { grid-template-columns: 1fr; }
+      .employee-card-1 { grid-template-columns: 1fr; }
       .equipment-card { grid-column: span 12; }
       .time-grid { grid-template-columns: 1fr; }
       .dress-code { grid-template-columns: 1fr; }
@@ -610,14 +610,14 @@
       </div>
 
       <div class="facilitator-grid">
-        <article class="info-card employee-card reveal">
+        <article class="info-card employee-card-1 reveal">
           <div>
             <span class="card-tag">Provided by HR</span>
             <h3>Your employee ID card</h3>
             <p>Use your badge for photocopying, scanning, dining at Highlands Coffee and Pho 24, plus additional benefits across VTI group services.</p>
             <p>For a visitor card, contact Ms. Uyen at reception. For a replacement, pay the 150,000 VND fee at Ms. Thuy’s counter on the first floor and take the receipt to reception.</p>
           </div>
-          <img src="employee-card.png" alt="Highlands Coffee employee identification card artwork">
+          <img src="employee-card-1.png" alt="Highlands Coffee employee identification card artwork">
         </article>
 
         <article class="info-card discount-card reveal">
