@@ -800,6 +800,7 @@
         <input type="hidden" name="_subject" value="New question from a new hire">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_cc" value="nghia.vo@vtijs.com">
 
         <div class="ask-grid">
           <div class="field">
@@ -882,15 +883,28 @@
             body: new FormData(askForm)
           });
 
+          let payload = null;
+          try { payload = await response.clone().json(); } catch (parseErr) { /* not JSON, ignore */ }
+
           if (response.ok) {
             askForm.reset();
             askStatus.textContent = 'Thanks! Your question has been sent to our admin.';
             askStatus.classList.add('success');
+          } else if (response.status === 403) {
+            askStatus.textContent = 'This form isn\'t activated yet. Please email Highlandsrecruitment.south@vtijs.com directly for now.';
+            askStatus.classList.add('error');
+          } else if (response.status === 429) {
+            askStatus.textContent = 'Too many questions sent recently. Please wait a bit and try again, or email Highlandsrecruitment.south@vtijs.com directly.';
+            askStatus.classList.add('error');
           } else {
-            throw new Error('Request failed');
+            const detail = payload && (payload.message || payload.error);
+            askStatus.textContent = detail
+              ? `Couldn't send your question: ${detail}. Please email Highlandsrecruitment.south@vtijs.com directly.`
+              : 'Something went wrong. Please try again or email Highlandsrecruitment.south@vtijs.com directly.';
+            askStatus.classList.add('error');
           }
         } catch (err) {
-          askStatus.textContent = 'Something went wrong. Please try again or email Highlandsrecruitment.south@vtijs.com directly.';
+          askStatus.textContent = 'Couldn\'t reach the server. Please check your connection and try again, or email Highlandsrecruitment.south@vtijs.com directly.';
           askStatus.classList.add('error');
         } finally {
           askSubmit.disabled = false;
