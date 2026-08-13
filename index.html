@@ -793,7 +793,7 @@
         <p class="section-intro">Can't find what you're looking for? Send your question straight to our onboarding admin and we'll get back to you.</p>
       </div>
 
-      <form class="ask-card ask-form reveal" id="askForm" action="https://formsubmit.co/ajax/Highlandsrecruitment.south@vtijs.com" method="POST">
+      <form class="ask-card ask-form reveal" id="askForm" action="https://formsubmit.co/ajax/recruitment.south@highlandscoffee.com.vn" method="POST">
         <!-- Anti-spam honeypot field: must stay empty -->
         <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
         <!-- FormSubmit configuration -->
@@ -891,20 +891,20 @@
             askStatus.textContent = 'Thanks! Your question has been sent to our admin.';
             askStatus.classList.add('success');
           } else if (response.status === 403) {
-            askStatus.textContent = 'This form isn\'t activated yet. Please email Highlandsrecruitment.south@vtijs.com directly for now.';
+            askStatus.textContent = 'This form isn\'t activated yet. Please email recruitment.south@highlandscoffee.com.vn directly for now.';
             askStatus.classList.add('error');
           } else if (response.status === 429) {
-            askStatus.textContent = 'Too many questions sent recently. Please wait a bit and try again, or email Highlandsrecruitment.south@vtijs.com directly.';
+            askStatus.textContent = 'Too many questions sent recently. Please wait a bit and try again, or email recruitment.south@highlandscoffee.com.vn directly.';
             askStatus.classList.add('error');
           } else {
             const detail = payload && (payload.message || payload.error);
             askStatus.textContent = detail
-              ? `Couldn't send your question: ${detail}. Please email Highlandsrecruitment.south@vtijs.com directly.`
-              : 'Something went wrong. Please try again or email Highlandsrecruitment.south@vtijs.com directly.';
+              ? `Couldn't send your question: ${detail}. Please email recruitment.south@highlandscoffee.com.vn directly.`
+              : 'Something went wrong. Please try again or email recruitment.south@highlandscoffee.com.vn directly.';
             askStatus.classList.add('error');
           }
         } catch (err) {
-          askStatus.textContent = 'Couldn\'t reach the server. Please check your connection and try again, or email Highlandsrecruitment.south@vtijs.com directly.';
+          askStatus.textContent = 'Couldn\'t reach the server. Please check your connection and try again, or email recruitment.south@highlandscoffee.com.vn directly.';
           askStatus.classList.add('error');
         } finally {
           askSubmit.disabled = false;
